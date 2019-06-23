@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Mars!</title>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        />
+    </head>
+
+    <body>
+        <div class="container text-center">
+            <h1 class="jumbotron">
+                Mission to Mars
+                <br>
+                <a class="btn btn-primary btn-lg" href="/scrape" role="button"
+                    >Click to Scrape New Data</a
+                >
+            </h1>
+        </div>
+               <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>{{mars_data.Mars_News_Title}}</h4>
+                    <br />
+                    <p>{{mars_data.Mars_News}}</p>
+                    
+                </div>
+            </div>
+
+            <div class="row">
+                <!--Featured Image on left 2/3rds <div class="row">-->
+                <div class="col-md-8">
+                    <class="pull-left"></class>
+                    <h4>Featured Image</h4>
+                    <br />
+                    <img
+                        src="{{mars_data.Mars_Featured_Image}}"
+                        alt="featured image"
+                    />
+                </div>
+
+                <!--Current Weather on right 1/3rd in rectangle-->
+                <div class="col-md-6">
+                    <h4>CURRENT WEATHER ON MARS</h4>
+                    align="right"
+                    <br />
+                    <p>tweet</p>
+                    <p>{{mars_data.Mars_Twitter_Weather}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!---Mars Facts table under weather still to the right of Image <div class="row">-->
+                <h2>Mars Facts</h2>
+                <table align="right">
+                  {% for key in mars_data.Mars_Facts %}
+                  <tr>
+                    <td>{{key}}</td>
+                    <td>{{mars_data.Mars_Facts[key]}}</td>
+                  </tr>
+                  {% endfor %}
+                </table>
+
+                <h1>Mars Hemispheres Section</h1>
+            </div>
+
+            <div class="row">
+                <h1>Mars Hemispheres</h1>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <img
+                        src={{mars_data.Mars_Hemispheres_Images[0]}}
+                        alt="Mars Hemisphere Links"
+                    />
+                    <br />
+                    {{mars_data.Mars_Hemispheres_Links[0]}}
+                </div>
+                <div class="col-md-6">
+                    <img
+                        src={{mars_data.Mars_Hemispheres_Images[1]}}
+                        alt="Mars Hemisphere Links"
+                    />
+                    <br />
+                    {{mars_data.Mars_Hemispheres_Links[1]}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <img
+                        src={{mars_data.Mars_Hemispheres_Images[2]}}
+                        alt="Mars Hemisphere Links"
+                    />
+                    <br />
+                    {{mars_data.Mars_Hemispheres_Links[2]}}
+                </div>
+
+                <div class="col-md-6">
+                    <img
+                        src={{mars_data.Mars_Hemispheres_Images[3]}}
+                        
+                        alt="Mars Hemisphere Links"
+                    />
+                    <br />
+                    {{mars_data.Mars_Hemispheres_Links[3]}}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
